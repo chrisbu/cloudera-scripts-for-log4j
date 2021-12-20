@@ -42,8 +42,10 @@ do
 	if grep -q $pattern $jarfile; then
 		if grep -q $good_pattern $jarfile; then
 			echo "Fixed version of Log4j-core found in '$jarfile'"
+			ls -lr $jarfile
 		else
 			echo "Vulnerable version of Log4j-core found in '$jarfile'"
+			ls -lr $jarfile
 		fi
 	fi
   done
@@ -67,8 +69,10 @@ do
     done
     if [ $found -eq 2 ]; then
       echo "Fixed version of Log4j-core found in '$warfile'"
+	  ls -lr $warfile
     elif [ $found -eq 1 ]; then
       echo "Vulnerable version of Log4j-core found in '$warfile'"
+	  ls -lr $warfile
     fi
     rm -r -f $tmpdir/unzip_target
   done
@@ -81,8 +85,10 @@ do
 	if zgrep -q $pattern $tarfile; then
 		if zgrep -q $good_pattern $tarfile; then
 			echo "Fixed version of Log4j-core found in '$tarfile'"
+			ls -lr $tarfile
 		else
 			echo "Vulnerable version of Log4j-core found in '$tarfile'"
+			ls -lr $tarfile
 		fi
 	fi
   done

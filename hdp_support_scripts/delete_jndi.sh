@@ -48,6 +48,7 @@ do
 		targetbackup="$backupdir/$jarfile.backup"
 		if [ ! -f "$targetbackup" ]; then
 			echo "Backing up to '$targetbackup'"
+			ls -lr $jarfile
 			cp -f "$jarfile" "$targetbackup"
 		fi
 
@@ -117,6 +118,7 @@ do
 
 	if [ 1 -eq $doZip ]; then
 	  echo "Updating '$warfile'"
+	  ls -lr $warfile
 	  pushd $tmpdir/unzip_target
 	  zip -r -q $warfile .
 	  popd

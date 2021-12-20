@@ -34,6 +34,7 @@ if [ ! -f "$targetbackup" ]; then
 fi
 
 echo "Patching '$tarfile'"
+ls -lr $tarfile
 tempfile=$(mktemp)
 tempdir=$(mktemp -d)
 tempbackupdir=$(mktemp -d)
